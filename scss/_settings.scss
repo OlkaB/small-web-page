@@ -1,0 +1,78 @@
+/*
+*  GLOBAL SETTINGS
+*/
+
+
+/* fonts */
+
+@font-face {
+    font-family: baseFont-light;
+    src: url('../assets/fonts/aldine721/0804eu27-webfont.ttf');
+}
+
+@font-face {
+    font-family: baseFont-normal;
+    src: url('../assets/fonts/aldine721/0112eu27-webfont.woff');
+}
+
+@font-face {
+    font-family: baseFont-bold;
+    src: url('../assets/fonts/aldine721/0114eu27-webfont.woff');
+}
+
+@font-face {
+    font-family: logoFont;
+    src: url('../assets/fonts/longtallsally/LongTall.ttf');
+}
+
+
+/* colors */
+
+$color-leadingRed: rgb(210,
+32,
+39);
+$color-leadingBlack: rgb(35,
+31,
+32);
+
+/* mixins */
+
+@mixin position-absolute($sideA,
+$sideAPosition,
+$sideB,
+$sideBPosition) {
+    position: absolute;
+    #{$sideA}: $sideAPosition;
+    #{$sideB}: $sideBPosition;
+}
+
+
+/* sprites */
+
+
+/* sprites - social icons */
+
+.loginbtn-fb,
+.loginbtn-gp,
+.magnify,
+.flag-gb,
+.flag-pl,
+.social-fb,
+.social-inst,
+.social-lin,
+.social-twb,
+.social-yt {
+    width: auto;
+    height: 25px;
+    background-size: 100%;
+    background-image: url('../assets/images/css_sprites.png');
+    margin: 2px;
+}
+
+
+/* settings */
+
+body {
+    font-family: baseFont-normal;
+    font-size: 1rem;
+}

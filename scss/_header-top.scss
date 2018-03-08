@@ -1,0 +1,170 @@
+/* 
+* HEADER STYLING
+*/
+
+
+/* layout */
+
+header,
+.headerTop,
+.headerTop-right,
+.headerTop-right-top,
+.headerTop-right-bottom {
+    display: flex;
+    align-items: stretch;
+}
+
+header {
+    width: 100%;
+}
+
+.headerTop {
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* social icons */
+
+.headerTop-socialIcons {
+    display: none;
+    .social-fb {
+        background-position: 0 65.217391%;
+        background-size: 972.727273%;
+    }
+    .social-twb {
+        background-position: 0 91.304348%;
+        background-size: 972.727273%;
+    }
+    .social-lin {
+        background-position: 0 82.608696%;
+        background-size: 972.727273%;
+    }
+    .social-inst {
+        background-position: 0 73.913043%;
+        background-size: 972.727273%;
+    }
+    .social-yt {
+        background-position: 0 100%;
+        background-size: 972.727273%;
+    }
+}
+
+
+/* logo */
+
+.headerTop-logo {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    h1 {
+        font-size: 50px;
+        font-family: logoFont;
+        font-weight: 100;
+        letter-spacing: 3px;
+        margin: 0 5px;
+    }
+    h2 {
+        display: none;
+    }
+    .holisticLogoNewsBlock {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        &-background {
+            background-color: $color-leadingRed;
+            animation: heartBeat 5s infinite;
+            height: 16px;
+            width: 40px;
+        }
+        &-text {
+            @include position-absolute(top, 2px, left, 1px);
+            color: white;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+
+/* right side: flags, login and search bar */
+
+.headerTop-right {
+    padding: 0 10px;
+    span,
+    label {
+        display: none;
+    }
+    &-top {
+        display: flex;
+        align-items: center;
+        svg {
+            height: 35px;
+            width: auto;
+            margin-right: 10px;
+        }
+    }
+    &-bottom {
+        .magnify {
+            background-position: 0 37.5%;
+            background-size: 509.52381%;
+            height: 40px;
+        }
+        #searchInput {
+            position: absolute;
+            display: none;
+        }
+    }
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    border-top: 2px solid $color-leadingBlack;
+    border-bottom: 1px solid $color-leadingBlack;
+}
+
+#searchInput {
+    display: none;
+}
+
+
+/* desktop size */
+
+@media screen and (min-width: 800px) {
+    .headerTop-logo {
+        h1 {
+            font-size: 160px;
+        }
+    }
+    .socialIcons {
+        display: block;
+    }
+    @keyframes heartBeat {
+        0% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        2.5% {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        5% {
+            -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+        }
+        7.5% {
+            -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+        }
+        25% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+        100% {
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+}
