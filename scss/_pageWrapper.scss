@@ -1,10 +1,33 @@
 .pageWrapper {
     max-width: 1020px;
     margin: auto;
+    &>.mainDivider:first-of-type {
+        display: block;
+    }
+    &>.mainDivider:last-of-type {
+        display: none;
+    }
 }
 
-@media screen and (min-width: 1024px) {
+.mainDivider {
+    width: 100%;
+    height: 6px;
+    border-top: 3px solid $color-leadingBlack;
+    border-bottom: 1px solid $color-leadingBlack;
+}
+
+
+/* large screens */
+
+@media #{$screen-large} {
     .pageWrapper {
         padding: 40px 0;
+        &>.mainDivider:first-of-type {
+            display: none;
+        }
+        &>.mainDivider:last-of-type {
+            display: block;
+            margin-top: 30px;
+        }
     }
 }

@@ -1,0 +1,173 @@
+/*
+* LOGIN FORM
+*/
+
+.loginForm {
+    position: absolute;
+    top: -900px;
+    visibility: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 360px;
+    width: 100%;
+    padding: 30px 40px 10px;
+    text-align: center;
+    background-color: white;
+    transition: all .5s ease-in-out;
+    &,
+    & input {
+        border: 0.5px solid $color-leadingBlack;
+    }
+    h2:not(.logoFont) {
+        font-family: baseFont-light;
+        font-weight: 500;
+        margin-top: 0;
+        font-size: 1.3rem;
+    }
+    &.visible {
+        visibility: visible;
+        top: 80px;
+    }
+}
+
+.loginForm--userData {
+    input {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 20px;
+        padding: 10px;
+        font-family: $font-loginForm;
+    }
+}
+
+.loginForm--checkBoxes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: $color-loginForm-grey;
+    input {
+        background-color: white;
+        -webkit-appearance: none;
+        border: 1px solid $color-leadingBlack;
+        padding: 6px;
+        position: relative;
+        outline: none;
+        font-size: 1.1rem;
+        &:checked:after {
+            content: '\2714';
+            font-size: 14px;
+            position: absolute;
+            top: -1px;
+            left: 1px;
+            color: $color-loginForm-grey;
+        }
+    }
+}
+
+.loginForm--recoverPassword {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    a {
+        color: $color-loginForm-grey;
+    }
+}
+
+.loginForm--bttns {
+    max-width: 210px;
+    width: 100%;
+    height: 45px;
+    margin: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+    &:active {
+        top: 1px;
+        left: 1px;
+    }
+    &:not(.loginForm--bttns--register) {
+        font-family: $font-loginForm;
+    }
+    &--loginViaFb {
+        background-color: $color-faceBook;
+        .logo {
+            background-image: url('../assets/images/loginForm-bttn_fb.png');
+            background-size: 25px auto;
+        }
+    }
+    &--loginViaGPlus {
+        background-color: $color-googlePlus;
+        box-shadow: inset -1px -1px 2px $color-googlePlus-shadow;
+        .logo {
+            background-image: url('../assets/images/loginForm-bttn_gp.png');
+            background-size: 25px auto;
+        }
+        .shadow {
+            background: url('../assets/images/loginForm-bttn_gp_shadow.png') repeat;
+            height: 100%;
+            width: 4px;
+        }
+    }
+    &--loginViaFb,
+    &--loginViaGPlus {
+        font-size: 0.7rem;
+        span {
+            width: 100%;
+            text-align: right;
+            padding-right: 20px
+        }
+    }
+    &--loginViaFb .logo,
+    &--loginViaGPlus .logo {
+        height: 45px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        width: 60px;
+    }
+    &--register {
+        background-color: $color-loginForm-grey;
+        font-size: 1.2rem;
+        font-weight: 500;
+        span {
+            margin: auto;
+        }
+    }
+}
+
+.loginForm--logo {
+    border-top: 1px solid $color-leadingBlack;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    h2 {
+        font-size: 3.8rem;
+        margin: 0;
+    }
+}
+
+
+/* logo's red block (with news) styled in file: _logo-hollistic.scss */
+
+.loginForm--logo .holisticLogoNewsBlock {
+    top: 62%;
+    &-background {
+        width: 50px;
+        height: 20px;
+    }
+}
+
+
+/* large screens */
+
+@media #{$screen-large} {
+    .loginForm {
+        z-index: 50;
+        &.visible {
+            top: 280px;
+        }
+    }
+}

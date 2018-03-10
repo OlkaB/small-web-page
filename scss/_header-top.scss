@@ -25,10 +25,16 @@ header {
 }
 
 
+/* menu style in file: _header-nav.scss */
+
+
 /* social icons */
 
 .headerTop-socialIcons {
+    height: 40px;
+    align-items: flex-end;
     display: none;
+    cursor: pointer;
     .social-fb {
         background-position: 0 65.217391%;
         background-size: 972.727273%;
@@ -49,6 +55,16 @@ header {
         background-position: 0 100%;
         background-size: 972.727273%;
     }
+    .social-fb,
+    .social-inst,
+    .social-lin,
+    .social-twb,
+    .social-yt {
+        &:hover {
+            transform: translateY(-15%);
+            box-shadow: 2px 2px 4px $color-leadingBlack;
+        }
+    }
 }
 
 
@@ -60,28 +76,25 @@ header {
     text-align: center;
     h1 {
         font-size: 50px;
-        font-family: logoFont;
-        font-weight: 100;
-        letter-spacing: 3px;
-        margin: 0 5px;
+        margin: 0;
     }
     h2 {
         display: none;
+        font-size: 1rem;
+        margin: 0;
+        font-family: baseFont-light;
+        font-weight: 100;
+        letter-spacing: 7px;
+        padding-left: 5px;
     }
+    /* logo's red block (with news) styled in file: _logo-hollistic.scss */
     .holisticLogoNewsBlock {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         &-background {
-            background-color: $color-leadingRed;
             animation: heartBeat 5s infinite;
             height: 16px;
             width: 40px;
         }
         &-text {
-            @include position-absolute(top, 2px, left, 1px);
-            color: white;
             font-size: 0.8rem;
         }
     }
@@ -92,9 +105,11 @@ header {
 
 .headerTop-right {
     padding: 0 10px;
-    span,
-    label {
+    &-top>a {
         display: none;
+        font-family: baseFont-light;
+        font-size: 0.8rem;
+        color: $color-leadingRed;
     }
     &-top {
         display: flex;
@@ -103,6 +118,34 @@ header {
             height: 35px;
             width: auto;
             margin-right: 10px;
+            border-radius: 100%;
+            box-shadow: 0px 0px 0px transparent;
+            transition: box-shadow 200ms, top 200ms, left 200ms;
+            position: relative;
+            &.active {
+                box-shadow: 1px 1px 3px grey;
+                top: -1px;
+                left: -1px
+            }
+        }
+        .flag {
+            margin-left: 10px;
+        }
+        .flag-pl,
+        .flag-gb {
+            height: 20px;
+            border: 1px solid lightgrey;
+            &:hover {
+                box-shadow: 2px 2px 4px $color-leadingBlack;
+            }
+        }
+        .flag-pl {
+            background-position: 0 57.142857%;
+            background-size: 750.877193%;
+        }
+        .flag-gb {
+            background-position: 0 50%;
+            background-size: 648.484848%;
         }
     }
     &-bottom {
@@ -110,43 +153,169 @@ header {
             background-position: 0 37.5%;
             background-size: 509.52381%;
             height: 40px;
+            transition: 200ms ease-in-out;
+            &.open {
+                transform: scale(1.1) rotate(-55deg);
+            }
         }
-        #searchInput {
-            position: absolute;
-            display: none;
+        .searchWrapper {
+            @include position-absolute(top, 63px, left, 0px);
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            background-color: $color-navMobile-background;
+            transition: height 200ms ease-in;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            &.expanded {
+                height: 55px;
+                box-shadow: 0 2px 3px gray;
+                border-bottom: 1px solid $color-leadingBlack;
+            }
+            label {
+                display: none;
+                font-family: baseFont-light;
+                font-size: 0.8rem;
+                color: $color-loginForm-grey;
+                width: 100%;
+                margin-bottom: 3px;
+            }
+            input {
+                border-radius: 6px;
+                height: 35px;
+                background-color: white;
+                box-shadow: inset 3px 3px 5px rgb(189, 189, 189);
+                border-style: hidden;
+                outline: none;
+                padding: 5px 10px;
+                flex: 1;
+                font-size: 0.9rem;
+            }
+            button {
+                display: block;
+                border-radius: 5px;
+                outline: none;
+                background-color: lightgrey;
+                border: 1px solid white;
+                box-shadow: 1px 1px 3px lightgrey;
+                width: 65px;
+                height: 30px;
+                margin-left: 20px;
+                font-size: 0.85rem;
+                color: grey;
+                &:active {
+                    box-shadow: inset 1px 1px 3px grey;
+                }
+            }
         }
     }
 }
 
-.divider {
-    width: 100%;
-    height: 2px;
-    border-top: 2px solid $color-leadingBlack;
-    border-bottom: 1px solid $color-leadingBlack;
-}
 
-#searchInput {
-    display: none;
-}
+/* navigation in file: _header-nav.scss */
 
 
-/* desktop size */
+/* large screens */
 
-@media screen and (min-width: 800px) {
+@media #{$screen-large} {
+    header {
+        flex-direction: column;
+    }
+    .headerTop {
+        align-items: stretch;
+        margin-bottom: 40px;
+    }
+    /* social icons */
+    .headerTop-socialIcons {
+        display: flex;
+    }
+    /* logo */
     .headerTop-logo {
+        display: flex;
+        flex-direction: column;
+        h1,
+        h2 {
+            display: inline;
+        }
         h1 {
             font-size: 160px;
+            height: 160px;
+            &:after {
+                content: '';
+                height: 1px;
+                width: 300px;
+                position: absolute;
+                bottom: 23px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-bottom: 1px solid $color-leadingBlack;
+            }
+        }
+        .holisticLogoNewsBlock {
+            height: 30px;
+            width: 85px;
+            &-background {
+                animation: heartBeat 5s linear infinite;
+                height: 30px;
+                width: 85px;
+                top: 0;
+                left: 0;
+            }
+            &-text {
+                font-size: 1.3rem;
+                font-family: baseFont-bold;
+            }
         }
     }
-    .socialIcons {
-        display: block;
+    /* right side: flags, login and search bar */
+    .headerTop-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+        &-top>a {
+            display: initial;
+        }
+        svg {
+            display: none;
+        }
+        .searchWrapper {
+            position: static;
+            height: initial;
+            width: 100%;
+            background-color: transparent;
+            flex-direction: column;
+            padding: 0;
+            label {
+                display: block;
+            }
+            input {
+                background-color: $color-navMobile-background;
+                box-shadow: inset 3px 3px 5px rgb(189, 189, 189);
+                height: 30px;
+            }
+            button {
+                display: none;
+            }
+        }
+        .magnify {
+            align-self: flex-end;
+            position: relative;
+            bottom: -5px;
+            &:active {
+                bottom: -6px;
+            }
+        }
     }
+    /* navigation in file: _header-nav.scss */
+    /* animation */
     @keyframes heartBeat {
         0% {
             -webkit-transform: scale(1);
             transform: scale(1);
         }
-        2.5% {
+        3% {
             -webkit-transform: scale(1.1);
             transform: scale(1.1);
         }
@@ -154,11 +323,15 @@ header {
             -webkit-transform: scale(1.05);
             transform: scale(1.05);
         }
-        7.5% {
+        7% {
             -webkit-transform: scale(1.2);
             transform: scale(1.2);
         }
-        25% {
+        12% {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+        17% {
             -webkit-transform: scale(1);
             transform: scale(1);
         }

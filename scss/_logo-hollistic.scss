@@ -1,0 +1,13 @@
+.holisticLogoNewsBlock {
+    color: $color-leadingRed;
+    @include position-absolute-centeredInParentRelative;
+    &-background {
+        @include position-absolute-centeredInParentRelative;
+        background-color: $color-leadingRed;
+    }
+    &-text {
+        @include position-absolute-centeredInParentRelative;
+        color: white;
+        padding-top: 3px;
+    }
+}

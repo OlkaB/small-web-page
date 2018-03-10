@@ -3,8 +3,32 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Holistic News - Paełny obraz świata</title>
+    <title>Holistic News - Pełny obraz świata</title>
+    <meta name="description" content="Description Here">
+    <meta name="keywords" content="Keywords Here">
+
+    <!-- 
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>  
+    <meta property="og:locale" content="pl-PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Holistic News - Pełny obraz świata" />
+    <meta property="og:image" content="http://server.domain/image.jpg">
+    <meta property="og:description" content="Description Here">
+    <meta property="og:url" content="https://sitename.domain/" />
+    <meta property="og:site_name" content="Holistic News - Pełny obraz świata" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Holistic News - Pełny obraz świata" />
+    <meta name="twitter:description" content="Description Here">
+    <meta name="twitter:site" content="@site_account">
+    <meta name="twitter:url" content="https://sitename.domain/">
+    <meta name="twitter:image" content="http://server.domain/image.jpg"> -->
+
+    <!-- <link rel="canonical" href="https://sitename.domain/" /> -->
+    <base href="https://olkab.github.io/small-web-page/">
+
     <!-- build:css -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
@@ -24,19 +48,22 @@
                     <img class="social-yt" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsAQMAAAAkSshCAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA1JREFUeNpjYBgFpAIAATQAAUFXahMAAAAASUVORK5CYII=">
                 </div>
                 <div class="headerTop-logo">
-                    <h1>HOLISTIC</h1>
+                    <h1 class="logoFont">HOLISTIC</h1>
                     <h2>PEŁNY OBRAZ ŚWIATA</h2>
                     <div class="holisticLogoNewsBlock">
-                        <span class="holisticLogoNewsBlock-text">NEWS</span>
                         <div class="holisticLogoNewsBlock-background"></div>
+                        <span class="holisticLogoNewsBlock-text">NEWS</span>
+
                     </div>
                 </div>
                 <div class="headerTop-right">
                     <div class="headerTop-right-top">
-                        <span>Login/Rejestracja</span>
-                        <span>flagPL</span>
-                        <span>flagGB</span>
-                        <svg viewBox="0 0 32 32"><path d="M8.4,23.9c-0.2,0-0.4-0.1-0.4-0.3c-0.1-0.2,0.1-0.5,0.3-0.5c1.6-0.4,3.9-1.2,4.4-1.7
+                        <a href="#" class="js-loginLink">Login/Rejestracja</a>
+                        <a href="#" class="flag"><img class="flag-pl" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAkAQMAAAAJngCDAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA1JREFUeNpjYBgFlAIAAUQAAb3FpxEAAAAASUVORK5CYII="></a>
+                        <a href="#" class="flag">
+                            <img class="flag-gb" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAAAkAQMAAAAHN37sAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAAA1JREFUeNpjYBgF9AAAAWgAAUrs9XsAAAAASUVORK5CYII=">
+                        </a>
+                        <svg class="js-loginIcon" viewBox="0 0 32 32"><path d="M8.4,23.9c-0.2,0-0.4-0.1-0.4-0.3c-0.1-0.2,0.1-0.5,0.3-0.5c1.6-0.4,3.9-1.2,4.4-1.7
                             c0.1-0.2,0.1-1,0-1.9c-0.7-0.6-1.2-1.5-1.4-2.4c-0.2-0.9-0.5-2.5-0.6-3.3c-0.1-1-0.1-1.4,0-2.1l0-0.1c0.3-2.2,2.5-3.9,5.2-3.9
                             c2.7,0,4.9,1.7,5.2,3.9l0,0.1c0.1,0.6,0.1,1.1,0,2.1c-0.1,0.8-0.4,2.5-0.6,3.3c-0.2,0.9-0.7,1.7-1.4,2.4c-0.1,0.8-0.1,1.7,0,1.9
                             c0.5,0.5,3,1.3,4.5,1.7c0.2,0.1,0.4,0.3,0.3,0.5s-0.3,0.4-0.5,0.3c-0.7-0.2-4.2-1-5-2c-0.5-0.6-0.3-2.1-0.2-2.7
@@ -45,10 +72,53 @@
                             c0.1,0.6,0.3,2.2-0.2,2.7c-0.8,0.9-4.1,1.8-4.8,2C8.5,23.9,8.4,23.9,8.4,23.9z"></path><path d="M16,30.3c-7.7,0-13.9-6.2-13.9-13.9C2.1,8.8,8.3,2.5,16,2.5c7.7,0,13.9,6.2,13.9,13.9
                             C29.9,24.1,23.7,30.3,16,30.3z M16,3.4c-7.2,0-13,5.8-13,13s5.8,13,13,13s13-5.8,13-13S23.2,3.4,16,3.4z"></path></svg>
                     </div>
+                    <form class="loginForm js-loginForm">
+                        <h2>Logowanie</h2>
+                        <div class="loginForm--userData">
+                            <input type="text" class="email" autocomplete="email" placeholder="Adres email" />
+                            <input type="password" autocomplete="current-password" class="password" placeholder="Hasło" />
+                        </div>
+                        <div class="loginForm--checkBoxes">
+                            <label>
+                                <input type="checkbox" class="js-loginForm--checkBoxes-rememberMe"> 
+                                Zapamiętaj mnie
+                            </label>
+                            <label>
+                                <input type="checkbox" class="js-loginForm--checkBoxes-newsLetter"> 
+                                Newsletter
+                            </label>
+                        </div>
+                        <p class="loginForm--recoverPassword">
+                            <a href="#">Nie pamiętam hasła.</a>
+                        </p>
+                        <div class="loginForm--bttns loginForm--bttns--loginViaFb">
+                            <div class="loginForm--bttns--loginViaFb-logoFb logo"></div>
+                            <span>Zaloguj się przez Facebook</span>
+                        </div>
+                        <div class="loginForm--bttns loginForm--bttns--loginViaGPlus">
+                            <div class="loginForm--bttns--loginViaFb-logoFb logo"></div>
+                            <div class="loginForm--bttns--loginViaFb-logoFb shadow"></div>
+                            <span>Zaloguj się przez <b>Google+</b></span>
+                        </div>
+                        <div class="loginForm--logo">
+                            <h2 class="logoFont">HOLISTIC</h2>
+                            <div class="holisticLogoNewsBlock">
+                                <div class="holisticLogoNewsBlock-background"></div>
+                                <span class="holisticLogoNewsBlock-text">NEWS</span>
+
+                            </div>
+                        </div>
+                        <div class="loginForm--bttns loginForm--bttns--register">
+                            <span>Rejestracja</span>
+                        </div>
+                    </form>
                     <div class="headerTop-right-bottom">
-                        <label for="searchInput">Wyszukaj w serwisie:</label>
-                        <input type="text" id="searchInput" />
-                        <img class="magnify" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUAQMAAAAmpYKCAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABFJREFUeNpjYBgFo2AUjBQAAAPwAAE1GW0yAAAAAElFTkSuQmCC">
+                        <div class="searchWrapper js-searchWrapper">
+                            <label for="searchInput">Wyszukaj w serwisie:</label>
+                            <input type="text" id="searchInput" />
+                            <button>szukaj</button>
+                        </div>
+                        <img class="magnify js-magnify" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAABUAQMAAAAmpYKCAAAAA1BMVEX///+nxBvIAAAAAXRSTlMAQObYZgAAABFJREFUeNpjYBgFo2AUjBQAAAPwAAE1GW0yAAAAAElFTkSuQmCC">
                     </div>
                 </div>
             </div>
@@ -90,65 +160,79 @@
             </nav>
         </header>
 
-        <div class="divider"></div>
+        <div class="mainDivider"></div>
 
         <main>
             <section class="leading">
                 <article class="newsOfDay">
-                    <figure class="newsOfDay-image">
-                        <img src="" alt="" />
-                        <figcaption>
-                            <span class="newsOfDay-image-caption__red">STYL&#38;ART</span> / JOANNA ROKICKA
+                    <figure class="newsOfDay--image">
+                        <img src="assets/images/main-news-img.png" alt="" />
+                        <figcaption class="newsOfDay--image--caption">
+                            <span class="newsOfDay--image--caption__red">STYL&#38;ART</span> / JOANNA ROKICKA
                         </figcaption>
                     </figure>
-                    <div class="newsOfDay-text">
+                    <div class="newsOfDay--text">
                         <h2><b>Smakuj życie</b> jak Francuzi</h2>
                         <p>W księgarniach pojawiają się serie poradników francuskich ekspertów, a w nich rady jak przeżyć życie z klasą. Czy porady specjalistów znad Sekwany poprawią ludziom innym na ludziom na całym świecie jakość życia? Czy to Francuzi
                             poznali tajemnicę szczęścia? Na czym polega francuska recepta na życie?</p>
                     </div>
-                    <p class="news-date">
-                        <span class="news-date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
+                    <p class="news--date">
+                        <span class="news--date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
                     </p>
                 </article>
+
                 <aside class="news">
-                    <div class="news-item">
+                    <hr class="newsDivider">
+                    <!-- <div class="news--top"> -->
+                    <div class="news--item one">
+                        <hr class="newsDivider">
                         <strong>NEWS</strong>
                         <h3 class="news-title">
                             <b>GRY</b> “W ZŁYM GUŚCIE”
                         </h3>
-                        <p class="news-item-body">
+                        <p class="news--item--body">
                             Władze w Pekinie podjęły działania zmierzające do usunięcia z rynku gier komputerowych “w złym guście” - podała agencja Reutera. Akcja jest wymierzona
                         </p>
-                        <div class="news-item-reveal"></div>
+                        <div class="chevronWrapper js-revealNews">
+                            <i class="chevronWrapper--icon"></i>
+                        </div>
                     </div>
-                    <div class="news-item">
+
+                    <div class="news--item two">
+                        <hr class="newsDivider">
                         <strong>NEWS</strong>
-                        <h3 class="news-item-title">
+                        <h3 class="news--item--title">
                             <b>ZDOBYWCA “ZŁOTEJ PIŁKI”</b> RZĄDZI LIBERIĄ
                         </h3>
-                        <p class="news-item-body">
+                        <p class="news--item--body">
                             Światowej sławy piłkarz George Weah, który wygrał wybory prezydenckie w Liberii, został zaprzysiężony na prezydenta kraju. To pierwszy od 74 lat przypadek demokratycznego objęcia władzy w tym afrykańskim kraju.
                         </p>
-                        <div class="news-item-reveal"></div>
+                        <div class="chevronWrapper">
+                            <i class="chevronWrapper--icon js-revealNews"></i>
+                        </div>
                     </div>
-                    <div class="news-item-item">
+
+                    <!-- </div> -->
+
+                    <div class="news--item three">
+                        <hr class="newsDivider">
                         <strong>NEWS</strong>
-                        <h3 class="news-item-title">
+                        <h3 class="news--item--title">
                             <b>AMAZON</b> BEZ KASJERÓW
                         </h3>
-                        <p class="news-item-body">
+                        <p class="news--item--body">
                             Amazon otwiera w Seattle pierwszy bezobsługowy sklep Go. Płatności pobierane będą na podstawie działania systemu śledzącego klientów w sklepie. Amazon otwiera w Seattle pierwszy bezobsługowy sklep Go. Płatności pobierane będą na podstawie działania systemu
                             śledzącego klientów w sklepie.
                         </p>
-                        <div class="news-item-reveal"></div>
                     </div>
-                    <p class="news-date">
-                        <span class="news-date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
+                    <p class="news--date">
+                        <span class="news--date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
                     </p>
                 </aside>
+                <div class="mainDivider"></div>
             </section>
         </main>
-
+        <div class="mainDivider"></div>
         <footer>
 
         </footer>
@@ -156,7 +240,6 @@
 
 
     <!-- build:js -->
-    <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
     <!-- endbuild  -->
 </body>

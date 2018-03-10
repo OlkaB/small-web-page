@@ -6,6 +6,7 @@ nav {
 /* hamburger-icon */
 
 .hamburger {
+    display: block;
     width: 60px;
     padding: 0 10px;
     height: 100%;
@@ -115,35 +116,83 @@ nav {
     width: 100%;
     color: white;
     box-shadow: 0 2px 3px gray;
-    &-item {
+}
+
+.navWrapper-item {
+    display: block;
+    height: 0;
+    text-align: center;
+    overflow: hidden;
+    transition: height 200ms ease-in;
+    &.expanded {
+        height: 45px;
+        border-bottom: 1px solid $color-leadingBlack;
+    }
+    a {
+        text-decoration: none;
+        color: $color-leadingBlack;
+        line-height: 50px;
+        text-transform: uppercase;
         display: block;
-        height: 0;
-        text-align: center;
-        overflow: hidden;
-        transition: height 200ms ease-in;
-        &.expanded {
-            height: 45px;
-            border-bottom: 1px solid lightgrey;
-        }
-        a {
-            text-decoration: none;
-            color: white;
-            line-height: 50px;
-            text-transform: uppercase;
-            display: block;
-            width: 100%;
-            height: 100%;
-            background-color: $color-leadingBlack;
-            transition: background-color 0.3s ease-in-out;
-            &:active {
-                background-color: $color-leadingRed;
-            }
+        width: 100%;
+        height: 100%;
+        background-color: $color-navMobile-background;
+        transition: background-color 500ms ease-in-out;
+        &:active {
+            background-color: $color-leadingRed;
         }
     }
 }
 
-@media screen and (min-width: 800px) {
+
+/* large screens */
+
+@media #{$screen-large} {
     nav {
         order: 1;
+    }
+    /* hamburger-icon */
+    .hamburger {
+        display: none;
+    }
+    /* menu-items */
+    .navWrapper {
+        position: relative;
+        top: 0;
+        box-shadow: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 50px;
+        margin-bottom: 20px;
+        &-item {
+            height: initial;
+            a {
+                background-color: transparent;
+                font-size: 0.85rem;
+                transition: color 300ms ease-in-out;
+                &:active {
+                    background-color: transparent;
+                }
+                &:hover {
+                    color: $color-leadingRed;
+                }
+            }
+        }
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+            height: 2px;
+        }
+        &::before {
+            border-top: 1px solid $color-leadingBlack;
+            border-bottom: 3px solid $color-leadingBlack;
+            @include position-absolute(top, 0, left, 0);
+        }
+        &::after {
+            border-top: 3px solid $color-leadingBlack;
+            border-bottom: 1px solid $color-leadingBlack;
+            @include position-absolute(bottom, 0, left, 0);
+        }
     }
 }

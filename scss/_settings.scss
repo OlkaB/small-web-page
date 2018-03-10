@@ -3,11 +3,22 @@
 */
 
 
+/* SCREEN SIZES: 
+* sm - small: 360px - 599px
+* md - medium: 600px - 899px
+* lg - large: above 900px;
+*/
+
+$screen-small: "screen and (min-width: 900px)";
+$screen-medium: "screen and(max-width: 899px) and (min-width: 600px) ";
+$screen-mediumANDlarge: "screen and (min-width: 600px)";
+$screen-large: "screen and (min-width: 900px)";
+
 /* fonts */
 
 @font-face {
     font-family: baseFont-light;
-    src: url('../assets/fonts/aldine721/0804eu27-webfont.ttf');
+    src: url('../assets/fonts/aldine721/0804eu27-webfont.woff');
 }
 
 @font-face {
@@ -25,6 +36,9 @@
     src: url('../assets/fonts/longtallsally/LongTall.ttf');
 }
 
+$font-loginForm: Arial,
+Helvetica,
+sans-serif;
 
 /* colors */
 
@@ -34,6 +48,21 @@ $color-leadingRed: rgb(210,
 $color-leadingBlack: rgb(35,
 31,
 32);
+$color-navMobile-background: rgb(245,
+245,
+245);
+$color-loginForm-grey: rgb(145,
+143,
+144);
+$color-faceBook: rgb(60,
+82,
+158);
+$color-googlePlus: rgb(231,
+55,
+53);
+$color-googlePlus-shadow: rgb(223,
+38,
+35);
 
 /* mixins */
 
@@ -44,6 +73,13 @@ $sideBPosition) {
     position: absolute;
     #{$sideA}: $sideAPosition;
     #{$sideB}: $sideBPosition;
+}
+
+@mixin position-absolute-centeredInParentRelative($fromTop: 50%) {
+    position: absolute;
+    top: $fromTop;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -66,13 +102,35 @@ $sideBPosition) {
     height: 25px;
     background-size: 100%;
     background-image: url('../assets/images/css_sprites.png');
-    margin: 2px;
+    margin-right: 4px;
+    margin-left: 5px;
+    transition: all 300ms ease-in-out;
 }
 
 
 /* settings */
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: baseFont-normal;
     font-size: 1rem;
+    width: 100%;
+}
+
+b {
+    font-family: baseFont-bold;
+}
+
+a {
+    text-decoration: none;
+    color: $color-leadingBlack;
+}
+
+.logoFont {
+    font-family: logoFont;
+    font-weight: 100;
+    letter-spacing: 3px;
 }
