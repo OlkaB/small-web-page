@@ -55,15 +55,8 @@ header {
         background-position: 0 100%;
         background-size: 972.727273%;
     }
-    .social-fb,
-    .social-inst,
-    .social-lin,
-    .social-twb,
-    .social-yt {
-        &:hover {
-            transform: translateY(-15%);
-            box-shadow: 2px 2px 4px $color-leadingBlack;
-        }
+    & img {
+        border-radius: 5px;
     }
 }
 
@@ -135,9 +128,6 @@ header {
         .flag-gb {
             height: 20px;
             border: 1px solid lightgrey;
-            &:hover {
-                box-shadow: 2px 2px 4px $color-leadingBlack;
-            }
         }
         .flag-pl {
             background-position: 0 57.142857%;
@@ -266,6 +256,14 @@ header {
                 font-size: 1.3rem;
                 font-family: baseFont-bold;
             }
+        }
+    }
+    .headerTop-socialIcons img,
+    .flag-pl,
+    .flag-gb {
+        &:hover {
+            transform: translateY(-15%);
+            box-shadow: 2px 2px 4px $color-leadingBlack;
         }
     }
     /* right side: flags, login and search bar */

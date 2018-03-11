@@ -72,10 +72,14 @@
     }
 
     function toggleNews() {
+        event.stopPropagation();
+
+        var clickedChevronIcon = event.target.classList.contains('chevronWrapper--icon') ? event.target : event.target.querySelector('.chevronWrapper--icon');
         var eventParentItemNodeClass = event.target.classList.contains('chevronWrapper--icon') ? event.target.parentNode.parentNode.classList : event.target.parentNode.classList;
-        event.target.classList.toggle('open');
-        if (event.target.classList.contains('open')) {
-            eventParentItemNodeClass.add('extended');
+
+        clickedChevronIcon.classList.toggle('open');
+        eventParentItemNodeClass.add('extended');
+        if (clickedChevronIcon.classList.contains('open')) {
             if (innerWidth >= 900) {
                 if (eventParentItemNodeClass.contains('one')) {
                     document.querySelector('.news--item.two').classList.add('rolled');

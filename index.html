@@ -6,10 +6,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Holistic News - Pełny obraz świata</title>
+    <!-- 
     <meta name="description" content="Description Here">
     <meta name="keywords" content="Keywords Here">
 
-    <!-- 
+    
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>  
     <meta property="og:locale" content="pl-PL" />
     <meta property="og:type" content="website" />
@@ -27,7 +28,7 @@
     <meta name="twitter:image" content="http://server.domain/image.jpg"> -->
 
     <!-- <link rel="canonical" href="https://sitename.domain/" /> -->
-    <base href="https://olkab.github.io/small-web-page/">
+    <!-- <base href="https://sitename.domain/"> -->
 
     <!-- build:css -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -183,7 +184,6 @@
 
                 <aside class="news">
                     <hr class="newsDivider">
-                    <!-- <div class="news--top"> -->
                     <div class="news--item one">
                         <hr class="newsDivider">
                         <strong>NEWS</strong>
@@ -194,7 +194,7 @@
                             Władze w Pekinie podjęły działania zmierzające do usunięcia z rynku gier komputerowych “w złym guście” - podała agencja Reutera. Akcja jest wymierzona
                         </p>
                         <div class="chevronWrapper js-revealNews">
-                            <i class="chevronWrapper--icon"></i>
+                            <i class="chevronWrapper--icon js-revealNews"></i>
                         </div>
                     </div>
 
@@ -207,13 +207,10 @@
                         <p class="news--item--body">
                             Światowej sławy piłkarz George Weah, który wygrał wybory prezydenckie w Liberii, został zaprzysiężony na prezydenta kraju. To pierwszy od 74 lat przypadek demokratycznego objęcia władzy w tym afrykańskim kraju.
                         </p>
-                        <div class="chevronWrapper">
-                            <i class="chevronWrapper--icon js-revealNews"></i>
+                        <div class="chevronWrapper js-revealNews">
+                            <i class="chevronWrapper--icon"></i>
                         </div>
                     </div>
-
-                    <!-- </div> -->
-
                     <div class="news--item three">
                         <hr class="newsDivider">
                         <strong>NEWS</strong>
@@ -224,10 +221,11 @@
                             Amazon otwiera w Seattle pierwszy bezobsługowy sklep Go. Płatności pobierane będą na podstawie działania systemu śledzącego klientów w sklepie. Amazon otwiera w Seattle pierwszy bezobsługowy sklep Go. Płatności pobierane będą na podstawie działania systemu
                             śledzącego klientów w sklepie.
                         </p>
+                        <p class="news--date">
+                            <span class="news--date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
+                        </p>
                     </div>
-                    <p class="news--date">
-                        <span class="news--date__bigRed">12:05,&nbsp;</span> 23 stycznia 2018
-                    </p>
+
                 </aside>
                 <div class="mainDivider"></div>
             </section>
