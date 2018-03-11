@@ -8,6 +8,7 @@
     var searchIcon = document.querySelector('.js-magnify');
     var searchWrapper = document.querySelector('.js-searchWrapper');
     var loginActivators = document.querySelectorAll('.js-loginIcon, .js-loginLink');
+    var loginLink = document.querySelector('.js-loginLink');
     var loginIcon = document.querySelector('.js-loginIcon');
     var loginForm = document.querySelector('.js-loginForm');
     var revealNewsChevron = document.querySelectorAll('.js-revealNews');
@@ -63,12 +64,29 @@
         }
     }
 
-    function toggleLoginFormByClickOutsideIt() {
-        var isClickInside = loginForm.contains(event.target) || event.target.className === 'js-loginLink' || (event.target.getAttribute("class") && event.target.getAttribute("class").match(/js.loginIcon/) !== null);
-        if (!isClickInside) {
-            loginIcon.classList.remove('active');
-            loginForm.classList.remove('visible');
-        }
+    // Works on chrome (only?)
+    // function toggleLoginFormByClickOutsideIt() {
+    //     var isClickInside = loginForm.contains(event.target) || event.target.className === 'js-loginLink' || (event.target.getAttribute("class") && event.target.getAttribute("class").match(/js.loginIcon/) !== null);
+    //     if (!isClickInside) {
+    //         loginIcon.classList.remove('active');
+    //         loginForm.classList.remove('visible');
+    //     }
+    // }
+
+    function toggleLoginFormByClickOutsideIt(event) {
+        var targetElement = event.target;
+
+        do {
+            if (targetElement == loginForm || targetElement == loginLink || targetElement == loginIcon) {
+                // This is a click inside
+                return;
+            }
+            targetElement = targetElement.parentNode;
+        } while (targetElement);
+
+        // This is a click outside.
+        loginIcon.classList.remove('active');
+        loginForm.classList.remove('visible');
     }
 
     function toggleNews() {
